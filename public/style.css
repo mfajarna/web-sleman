@@ -1,0 +1,49 @@
+.img-crl {
+    width: 100px;
+    height: 90vh;
+}
+
+.img {
+    position: relative;
+}
+.title {
+    width: 200;
+}
+
+/* .bg-nav{
+    color: #00000000 !important;
+    background-color: #ffff;
+} */
+
+.link-nav:hover {
+    background-color: rgb(0, 152, 247) !important;
+}
+
+.bg-pelayanan {
+    background-color: rgb(255, 255, 255);
+}
+
+.overley {
+    background-color: rgba(0, 0, 0, 0.2);
+    opacity: 1;
+}
+
+.gambar img {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+}
+
+.img-home {
+    height: 80%;
+}
+
+.title {
+    flex: auto;
+    justify-content: center;
+    align-items: center;
+}
+.title h2 {
+    position: absolute;
+    left: 0%;
+}
