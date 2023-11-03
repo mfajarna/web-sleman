@@ -106,8 +106,6 @@ class PeminjamanController extends Controller
         $model = MPeminjaman::findOrFail($id);
         
 
-        dd($id);
-
         return response()->json(array('success' => $id));
         // $model->status = 'Diverifikasi';
         // $model->save();
@@ -135,5 +133,17 @@ class PeminjamanController extends Controller
         // return redirect()->back()->with('success', 'File uploaded successfully.');
 
         return response()->json(array('status' =>'200'));
+    }
+
+
+    public function checkStatus(Request $request){
+        $id = $request->id;
+
+        $model = MPeminjaman::findOrFail($id);
+        $model->status = 'Diverifikasi';
+        $model->save();
+
+
+        return response()->json(array('status' => $model));
     }
 }

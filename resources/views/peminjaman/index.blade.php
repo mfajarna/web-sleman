@@ -50,9 +50,14 @@
                                     <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                         {{$item->status}}
                                     </button>
-                                    <div class="dropdown-menu animated--fade-in" aria-labelledby="dropdownMenuButton" style="">
-                                        <a class="dropdown-item" id="btn_verifikasi" href="{{route('peminjaman-admin.update', $item->id)}}">Diverifikasi</a>
-                                    </div>
+
+                                    @if($item->status === 'Belum Diverifikasi')
+                                        <div class="dropdown-menu animated--fade-in" aria-labelledby="dropdownMenuButton" style="">
+                                            <a class="dropdown-item" id="btn_verifikasi">Diverifikasi</a>
+                                        </div>
+                                    @else
+                                        <div></div>
+                                    @endif
                                 </div>
                             </td>
                         </tr>
@@ -62,7 +67,7 @@
         </div>
     </div>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    {{-- <script>
+    <script>
         $(document).ready(function(){
             $('#btn_verifikasi').on('click', function(){
                 const id = $('#id').val();
@@ -72,11 +77,11 @@
                     _token: csrfToken, // Include the CSRF token in the data
                 };
 
-                console.log(id);
+                const url = 'peminjaman-checkstatus?id=' + id;
 
                 $.ajax({
                     type: 'POST',
-                    url: '{{url("/peminjaman-update/' + id '")}}',
+                    url: url,
                     data:data,
                     success: function(data){
                         console.log('succ', data);
@@ -87,6 +92,6 @@
                 });
             })
         })
-    </script> --}}
+    </script>
 
 @endsection

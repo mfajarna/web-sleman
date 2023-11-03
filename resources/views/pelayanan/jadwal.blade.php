@@ -65,13 +65,16 @@
           </div>
           <div class="add-event-body">
             <div class="add-event-input">
-              <input type="text" placeholder="Nama Agenda" class="event-name" />
+              <input type="text" placeholder="Nama Penyewa" class="event-penyewa" />
             </div>
             <div class="add-event-input">
-              <input type="text" placeholder="Instansi" class="event-name" />
+              <input type="text" placeholder="Instansi" class="event-instansi" />
             </div>
             <div class="add-event-input">
-              <input type="text" placeholder="Jadwal Acara" class="event-name" />
+              <input type="text" placeholder="Nama Acara" class="event-name" />
+            </div>
+            <div class="add-event-input">
+              <input type="text" placeholder="Jadwal Acara" class="event-jadwal" />
             </div>
             
             <div class="add-event-input">
@@ -91,7 +94,7 @@
           </div>
           <div class="add-event-footer">
             
-            {{-- <button class="add-event-btn">Tambah Acara</button> --}}
+            <button class="add-event-btn">Tambah Acara</button>
           </div>
         </div>
       </div>
@@ -125,6 +128,9 @@
   addEventFrom = document.querySelector(".event-time-from "),
   addEventTo = document.querySelector(".event-time-to "),
   addEventSubmit = document.querySelector(".add-event-btn ");
+  addEventNamePenyewa = document.querySelector(".event-penyewa");
+  addEventInstansi = document.querySelector(".event-instansi");
+  addEventJadwal = document.querySelector('.event-jadwal');
 
 let today = new Date();
 let activeDay;
@@ -371,6 +377,8 @@ function getIndonesianDayName(date) {
 function updateEvents(date) {
   let events = "";
   eventsArr.forEach((event) => {
+
+    console.log('event' + event);
     if (
       date === event.day &&
       month + 1 === event.month &&
@@ -380,7 +388,10 @@ function updateEvents(date) {
         events += `<div class="event">
             <div class="title">
               <i class="fas fa-circle"></i>
-              <h3 class="event-title">${event.title}</h3>
+              <h3 class="event-title">Nama Acara: ${event.title}</h3>
+              <h3 class="event-title">Nama Penyewa: ${event.namePenyewa}</h3>
+              <h3 class="event-title">Nama Instansi: ${event.instansi}</h3>
+              <h3 class="event-title">Jadwal Acara: ${event.jadwal}</h3>
             </div>
             <div class="event-time">
               <span class="event-time">${event.time}</span>
@@ -416,6 +427,18 @@ document.addEventListener("click", (e) => {
 //allow 50 chars in eventtitle
 addEventTitle.addEventListener("input", (e) => {
   addEventTitle.value = addEventTitle.value.slice(0, 60);
+});
+
+addEventNamePenyewa.addEventListener("input", (e) => {
+  addEventNamePenyewa.value = addEventNamePenyewa.value.slice(0, 60);
+});
+
+addEventInstansi.addEventListener("input", (e) => {
+  addEventInstansi.value = addEventInstansi.value.slice(0, 60);
+});
+
+addEventJadwal.addEventListener("input", (e) => {
+  addEventJadwal.value = addEventJadwal.value.slice(0, 60);
 });
 
 function defineProperty() {
@@ -462,9 +485,12 @@ addEventTo.addEventListener("input", (e) => {
 //function to add event to eventsArr
 addEventSubmit.addEventListener("click", () => {
   const eventTitle = addEventTitle.value;
+  const eventPenyewa = addEventNamePenyewa.value;
+  const eventInstansi = addEventInstansi.value;
+  const eventJadwal = addEventJadwal.value;
   const eventTimeFrom = addEventFrom.value;
   const eventTimeTo = addEventTo.value;
-  if (eventTitle === "" || eventTimeFrom === "" || eventTimeTo === "") {
+  if (eventTitle === "" || eventTimeFrom === "" || eventTimeTo === "" || eventPenyewa === "" || eventInstansi === "" || eventJadwal === "") {
     alert("Please fill all the fields");
     return;
   }
@@ -508,6 +534,9 @@ addEventSubmit.addEventListener("click", () => {
   }
   const newEvent = {
     title: eventTitle,
+    namePenyewa: eventPenyewa,
+    instansi: eventInstansi,
+    jadwal: eventJadwal,
     time: timeFrom + " - " + timeTo,
   };
   console.log(newEvent);
@@ -538,6 +567,9 @@ addEventSubmit.addEventListener("click", () => {
   console.log(eventsArr);
   addEventWrapper.classList.remove("active");
   addEventTitle.value = "";
+  addEventNamePenyewa.value = "";
+  addEventInstansi.value = "";
+  addEventJadwal.value = "";
   addEventFrom.value = "";
   addEventTo.value = "";
   updateEvents(activeDay);

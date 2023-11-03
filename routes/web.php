@@ -51,6 +51,7 @@ Route::group(['middleware' => 'auth'], function () {
 // Peminjaman
 Route::resource('peminjaman-admin', PeminjamanController::class);
 Route::get('/peminjaman-admin/${id}', [PeminjamanController::class,'update'])->name('peminjaman-update');
+Route::post('/peminjaman-checkstatus', [PeminjamanController::class,'checkStatus'])->name('peminjaman-checkstatus');
 
 
 // SOP
