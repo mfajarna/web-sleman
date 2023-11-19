@@ -37,7 +37,7 @@
                         </li>
                         </li>
                         <li class="nav-item">
-                        <a class="nav-link link-nav " href="{{route('fasilitas')}}">FASILITAS</a>
+                        <a class="nav-link link-nav " href="{{route('fasilitas-user')}}">FASILITAS</a>
                         </li>
                         <li class="nav-item">
                           <a class="nav-link link-nav " href="{{route('kontak')}}">KONTAK</a>
@@ -47,6 +47,15 @@
        <div class="container">
         <h3 class="mt-2">Pengisian Formulir</h3>   
                 
+        @if (session('message'))
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                        {{ session('message') }}
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                        </button>
+                </div>
+        @endif
+
         <div class="mt-3">
           <form action="{{route('peminjaman-admin.store')}}" method="POST" enctype="multipart/form-data">
                 @csrf

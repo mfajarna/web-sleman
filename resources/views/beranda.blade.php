@@ -73,7 +73,7 @@
             </li>
             </li>
             <li class="nav-item">
-            <a class="nav-link link-nav " href="{{route('fasilitas')}}">FASILITAS</a>
+            <a class="nav-link link-nav " href="{{route('fasilitas-user')}}">FASILITAS</a>
             </li>
             <li class="nav-item">
               <a class="nav-link link-nav " href="{{route('kontak')}}">KONTAK</a>
@@ -86,7 +86,7 @@
           <div class="col">
             <div class="text-overlay">
               <h1 class="text-center">Selamat Datang</h1>
-              <p class="text-center">Silandung Sistem Pelayanan Gedung Kesenian Dinas Kebudayaan (Kundha Kebudayaan Kabupaten Sleman)</p>
+              <p class="text-center">"SILANDUNG" SISTEM PELAYANAN GEDUNG KESENIAN BERBASIS DIGITAL DINAS KEBUDAYAAN (KUNDHA KEBUDAYAN) KABUPATEN SLEMAN</p>
             </div>
           </div>
         </div>

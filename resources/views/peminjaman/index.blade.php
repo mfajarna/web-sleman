@@ -15,12 +15,13 @@
                 <thead>
                     <tr>
                         <th>Nama Peminjam</th>
-                        <th>Nama Instansi</th>
+                        <th>Instansi / Asal Peminjam</th>
                         <th>No Telepon / WA</th>
+                        <th>Acara</th>
                         <th>Surat Permohonan</th>
                         <th>KTP</th>
-                        <th>Dari Tanggal</th>
-                        <th>Sampai Tanggal</th>
+                        <th>Dari</th>
+                        <th>Sampai</th>
                         <th>Waktu Peminjaman</th>
                         <th>Aksi</th>
                     </tr>
@@ -31,6 +32,7 @@
                             <td>{{$item->nama }}</td>
                             <td>{{$item->instansi }}</td>
                             <td>{{$item->no_telp }}</td>
+                            <td>{{$item->acara }}</td>
                             <td>{{$item->surat_permohonan === null ? 'Tidak Ada': $item->surat_permohonan }}</td>
                             <td>
                                 <img src="ktp/{{$item->ktp}}" width="300" height="150">
@@ -53,7 +55,8 @@
 
                                     @if($item->status === 'Belum Diverifikasi')
                                         <div class="dropdown-menu animated--fade-in" aria-labelledby="dropdownMenuButton" style="">
-                                            <a class="dropdown-item" id="btn_verifikasi">Diverifikasi</a>
+                                            {{-- <a class="dropdown-item" id="btn_verifikasi" href="">Diverifikasi</a> --}}
+                                            <a class="dropdown-item" href="/peminjaman-checkstatus?id={{$item->id}}">Diverifikasi</a>
                                         </div>
                                     @else
                                         <div></div>

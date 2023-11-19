@@ -90,7 +90,7 @@
             </li>
             </li>
             <li class="nav-item">
-            <a class="nav-link link-nav " href="{{route('fasilitas')}}">FASILITAS</a>
+            <a class="nav-link link-nav " href="{{route('fasilitas-user')}}">FASILITAS</a>
             </li>
             <li class="nav-item">
               <a class="nav-link link-nav " href="{{route('kontak')}}">KONTAK</a>
@@ -101,15 +101,11 @@
     <div class="container">
       <div class="profile-container">
         <ul class="profile-links">
-          <li class="profile-link text-center">
-              <a href="https://wa.me/083867150520" class="btn btn-primary btn-block" target="_blank">Kontak Admin 1</a>
-          </li>
-          <li class="profile-link text-center">
-              <a href="https://wa.me/085743600355" class="btn btn-primary btn-block" target="_blank">Kontak Admin 2</a>
-          </li>
-          <li class="profile-link text-center">
-              <a href="https://www.instagram.com/slemanberbudaya/" class="btn btn-primary btn-block" target="_blank">Instagram</a>
-          </li>
+          @foreach($kontaks as $item)
+            <li class="profile-link text-center">
+                <a href="{{$item->link}}" class="btn btn-primary btn-block" target="_blank">{{$item->title}}</a>
+            </li>
+          @endforeach
           <!-- Add more links as needed -->
       </ul>
       </div>

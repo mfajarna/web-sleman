@@ -68,7 +68,7 @@ class PeminjamanController extends Controller
         $filePath = $file->store('ktp');
         $file->move(public_path('ktp'), $fileName);
 
-        return redirect()->back()->with('success', 'File uploaded successfully.');
+        return redirect()->route('peminjaman')->with('message', 'Berhasil membuat item.');
 
     }
 
@@ -144,6 +144,6 @@ class PeminjamanController extends Controller
         $model->save();
 
 
-        return response()->json(array('status' => $model));
+        return redirect()->route('peminjaman-admin.index')->with('message', 'Berhasil update item.');
     }
 }

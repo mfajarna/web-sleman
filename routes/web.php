@@ -10,6 +10,8 @@ use App\Http\Controllers\PeraturanController;
 use App\Http\Controllers\EventController;
 use App\Http\Controllers\PelayananController;
 use App\Http\Controllers\PeminjamanController;
+use App\Http\Controllers\KontakController;
+use App\Http\Controllers\FasilitasController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -45,14 +47,16 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('/pelayanan-upload', [PelayananController::class, 'upload'])->name('pelayanan-upload');
     Route::get('/pelayanan-edit/${id}', [PelayananController::class, 'edit'])->name('pelayanan-edit');
     Route::put('/pelayanan-edit/${id}', [PelayananController::class, 'update'])->name('pelayanan-edit-action');
-    
+
 });
 
 // Peminjaman
 Route::resource('peminjaman-admin', PeminjamanController::class);
 Route::get('/peminjaman-admin/${id}', [PeminjamanController::class,'update'])->name('peminjaman-update');
-Route::post('/peminjaman-checkstatus', [PeminjamanController::class,'checkStatus'])->name('peminjaman-checkstatus');
+Route::get('/peminjaman-checkstatus', [PeminjamanController::class,'checkStatus'])->name('peminjaman-checkstatus');
 
+Route::resource('kontak-admin', KontakController::class);
+Route::resource('fasilitas-admin', FasilitasController::class);
 
 // SOP
 Route::resource('sop', sopController::class);
@@ -67,7 +71,7 @@ Route::get('/peraturan', [PeraturanController::class, 'index'])->name('peraturan
 // jadwal
 Route::get('/jadwal', [BerandaController::class, 'jadwal'])->name('jadwal');
 Route::get('/jadwal-user', [BerandaController::class, 'jadwal_user'])->name('jadwal_user');
-Route::get('/fasilitas', [BerandaController::class, 'fasilitas'])->name('fasilitas');
+Route::get('/fasilitas-user', [BerandaController::class, 'fasilitas'])->name('fasilitas-user');
 
 Route::resource('events', EventController::class);
 Route::get('/calendar', [EventController::class, 'calendar'])->name('calendar');

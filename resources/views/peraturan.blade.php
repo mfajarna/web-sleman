@@ -38,7 +38,7 @@
             </li>
             </li>
             <li class="nav-item">
-            <a class="nav-link link-nav" href="{{route('fasilitas')}}">FASILITAS</a>
+            <a class="nav-link link-nav" href="{{route('fasilitas-user')}}">FASILITAS</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link link-nav" href="{{route('kontak')}}">KONTAK</a>

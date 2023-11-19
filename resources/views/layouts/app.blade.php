@@ -80,6 +80,20 @@
                 </a>
             </li>
 
+            <li class="nav-item">
+                <a class="nav-link" href="{{ route('kontak-admin.index') }}">
+                    <i class="fas fa-phone"></i>
+                    <span>Kontak</span>
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="{{ route('fasilitas-admin.index') }}">
+                    <i class="fas fa-calendar-week"></i>
+                    <span>Fasilitas</span>
+                </a>
+            </li>
+
             <!-- Divider -->
             <hr class="sidebar-divider">
 
