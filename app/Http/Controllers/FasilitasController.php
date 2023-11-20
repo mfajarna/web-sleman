@@ -37,31 +37,6 @@ class FasilitasController extends Controller
      */
     public function store(Request $request)
     {
-        // // Validate the request
-        // $request->validate([
-        //     'files.*' => 'required|mimes:jpg,jpeg,png,pdf', // Adjust the file validation as needed
-        //     'descriptions.*' => 'nullable|string|max:255', // Adjust the description validation as needed
-        //     'category'  => 'required|string'
-        // ]);
-
-        // $files = $request->file('files');
-        // $descriptions = $request->input('descriptions');
-        // $category = $request->input('category');
-
-        // foreach ($files as $key => $file) {
-        //     // Store the file
-        //     $path = $file->store('uploads');
-        //     $fileName = $file->getClientOriginalName();
-        //     $file->move(public_path('fasilitas'), $fileName);
-    
-        //     // Create a new record in the database
-        //     MFasilitas::create([
-        //         'category' => $category,
-        //         'file_path' => $fileName,
-        //         'description' => $descriptions[$key],
-        //     ]);
-        // }
-
         $request->validate([
             'category' => 'required|string',
             'addMoreInputFields.*.photos' => 'required|mimes:jpg,png,jpeg,gif',
@@ -121,7 +96,10 @@ class FasilitasController extends Controller
      */
     public function edit($id)
     {
-        //
+        $model = MFasilitas::findOrFail($id);
+
+
+        return view('fasilitas.edit', compact('model'));
     }
 
     /**
@@ -144,6 +122,10 @@ class FasilitasController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $model = MFasilitas::findOrFail($id);
+        $model->delete();
+
+
+        return redirect()->route('fasilitas-admin.index')->with('message', 'Berhasil menghapus item baru.'); 
     }
 }

@@ -99,6 +99,7 @@
     </div>
     </nav>
     <div class="container">
+      <h5 class="text-center">List Kontak</h5>
       <div class="profile-container">
         <ul class="profile-links">
           @foreach($kontaks as $item)

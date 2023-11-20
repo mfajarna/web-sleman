@@ -32,8 +32,8 @@
                         <td>{{ $index + 1 }}</td>
                         <td>{{ $item->category }}</td>
                         <td class="text-center">
-                            <a href="{{ route('aturan.edit', $item->id) }}" class="btn btn-warning btn-sm m-1"><i class="fas fa-edit"></i></a>
-                            <form action="{{ route('aturan.destroy', $item->id) }}" method="POST" style="display: inline">
+                            <a href="{{ route('fasilitas-admin.edit', $item->id) }}" class="btn btn-warning btn-sm m-1"><i class="fas fa-edit"></i></a>
+                            <form action="{{ route('fasilitas-admin.destroy', $item->id) }}" method="POST" style="display: inline">
                                 @csrf
                                 @method('DELETE')
                                 <button type="submit" class="btn btn-danger btn-sm m-1" onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')"><i class="fas fa-trash"></i></button>

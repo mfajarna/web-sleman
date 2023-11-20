@@ -53,7 +53,7 @@
         @foreach ($fasilitasKategory as $item)
            <h2>{{$item->category}}</h2>
 
-           <div class="row">
+           <div class="row mb-4">
                 @foreach ($item->file_path as $key =>  $file )
                 <div class="col-md-4">
                         <div class="card" style="width: 18rem;">

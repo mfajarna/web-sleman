@@ -14,26 +14,6 @@
       <small id="emailHelp" class="form-text text-muted">Contoh: Ruang Panggung, Ruang Tunggu dll.</small>
     </div>
 
-{{-- 
-    <div class="border px-4 py-2">
-        <div id="fileInputsContainer">
-          <div class="file-input-group">
-            <div class="form-group mb-2">
-              <label for="files">Gambar Fasilitas</label>
-              <input type="file" name="files[]" class="form-control file-input" required>
-            </div>
-
-            <div class="form-group">
-              <label for="desc">Deskripsi Fasilitas</label>
-              <textarea name="descriptions[]" class="form-control" required></textarea>
-            </div>
-          </div>
-
-        </div>
-
-        <button type="button" id="addFileInput" class="btn btn-success mt-4">Tambah Gambar</button>
-    </div> --}}
-
     <table class="table table-bordered" id="dynamicAddRemove">
       <tr>
           <th>Photo</th>
@@ -41,9 +21,9 @@
           <th>Action</th>
       </tr>
       <tr>
-          <td><input type="file" name="addMoreInputFields[0][photos]" placeholder="Enter subject" class="form-control" />
+          <td><input type="file" name="addMoreInputFields[0][photos]" placeholder="Enter subject" class="form-control" required />
           </td>
-          <td><textarea name="addMoreInputFields[0][desc]" placeholder="Isi deskripsi photo" class="form-control"></textarea>
+          <td><textarea name="addMoreInputFields[0][desc]" placeholder="Isi deskripsi photo" class="form-control" required></textarea>
           </td>
           <td><button type="button" name="add" id="dynamic-ar" class="btn btn-outline-primary">Tambah Item</button></td>
       </tr>
