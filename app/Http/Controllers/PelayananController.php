@@ -32,7 +32,7 @@ class PelayananController extends Controller
         $fileModel->path = $filePath;
         $fileModel->save();
 
-        return redirect()->back()->with('success', 'File uploaded successfully.');
+        return redirect()->route('sop.index')->with('message', 'Data Pelayanan berhasil ditambahkan.');
         
     }
 
@@ -58,7 +58,7 @@ class PelayananController extends Controller
         $pelayanan->path = $filePath;
         $pelayanan->save();
 
-        return redirect()->back()->with('success', 'File uploaded successfully.');
+        return redirect()->route('sop.index')->with('message', 'Data Pelayanan berhasil diupdate.');
         
     }
 }

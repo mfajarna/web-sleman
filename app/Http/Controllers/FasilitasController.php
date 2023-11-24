@@ -64,9 +64,7 @@ class FasilitasController extends Controller
             $data[] = $dataObj;
 
         }
-        
-
-
+    
         $model = new MFasilitas;
         $model->category = $category;
         $model->file_path = $data;
@@ -98,7 +96,6 @@ class FasilitasController extends Controller
     {
         $model = MFasilitas::findOrFail($id);
 
-
         return view('fasilitas.edit', compact('model'));
     }
 
@@ -111,7 +108,41 @@ class FasilitasController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $model = MFasilitas::findOrFail($id);
+
+        $request->validate([
+            'category' => 'string',
+            'addMoreInputFields.*.photos' => 'required|mimes:jpg,png,jpeg,gif',
+            'addMoreInputFields.*.desc' => 'string'
+        ]);
+
+        $data = []; 
+
+        foreach($request->addMoreInputFields as $key => $value) {
+            
+            $fileName = $value['photos']->store('fasilitas');
+            
+            $photoPath = $value['photos']->storePubliclyAs('',$fileName);// Store the photo and get the path
+            $value['photos']->move(public_path('fasilitas'), $fileName);
+        
+            // Create a new object with the photo path and description
+            $dataObj = [
+                'photoPath' => $photoPath,
+                'description' => $value['desc']
+            ];
+        
+            // Add data object to data array
+            $data[] = $dataObj;
+
+        }
+
+        $model->category = $request->category;
+        $model->file_path = $data;
+        $model->description = 'test';
+
+        $model->save();
+
+        return redirect()->route('fasilitas-admin.index')->with('message', 'Berhasil update item baru.');
     }
 
     /**

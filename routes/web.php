@@ -47,7 +47,6 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('/pelayanan-upload', [PelayananController::class, 'upload'])->name('pelayanan-upload');
     Route::get('/pelayanan-edit/${id}', [PelayananController::class, 'edit'])->name('pelayanan-edit');
     Route::put('/pelayanan-edit/${id}', [PelayananController::class, 'update'])->name('pelayanan-edit-action');
-
 });
 
 // Peminjaman

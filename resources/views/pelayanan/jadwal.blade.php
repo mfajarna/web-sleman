@@ -44,13 +44,13 @@
           </div>
           <div class="add-event-body">
             <div class="add-event-input">
-              <input type="text" placeholder="Nama Penyewa" class="event-penyewa" />
+              <input type="text" placeholder="Nama Peminjam" class="event-penyewa" />
             </div>
             <div class="add-event-input">
-              <input type="text" placeholder="Instansi" class="event-instansi" />
+              <input type="text" placeholder="Instansi / Asal Peminjam" class="event-instansi" />
             </div>
             <div class="add-event-input">
-              <input type="text" placeholder="Nama Acara" class="event-name" />
+              <input type="text" placeholder="Acara" class="event-name" />
             </div>
             <div class="add-event-input">
               <input type="text" placeholder="Jadwal Acara" class="event-jadwal" />
@@ -59,14 +59,14 @@
             <div class="add-event-input">
               <input
                 type="text"
-                placeholder="Waktu Mulai Agenda"
+                placeholder="Waktu Mulai Acara"
                 class="event-time-from"
               />
             </div>
             <div class="add-event-input">
               <input
                 type="text"
-                placeholder="Waktu Selesai Agenda"
+                placeholder="Waktu Selesai Acara"
                 class="event-time-to"
               />
             </div>
@@ -537,7 +537,6 @@
         });
       }
 
-      console.log(eventsArr);
       addEventWrapper.classList.remove("active");
       addEventTitle.value = "";
       addEventNamePenyewa.value = "";
