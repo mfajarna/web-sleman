@@ -17,13 +17,11 @@
     <table class="table table-bordered" id="dynamicAddRemove">
       <tr>
           <th>Photo</th>
-          <th>Deskripsi Photo</th>
           <th>Action</th>
       </tr>
       <tr>
           <td><input type="file" name="addMoreInputFields[0][photos]" placeholder="Enter subject" class="form-control" required />
           </td>
-          <td><textarea name="addMoreInputFields[0][desc]" placeholder="Isi deskripsi photo" class="form-control" required></textarea>
           </td>
           <td><button type="button" name="add" id="dynamic-ar" class="btn btn-outline-primary">Tambah Item</button></td>
       </tr>
@@ -41,7 +39,7 @@
     $("#dynamic-ar").click(function () {
         ++i;
         $("#dynamicAddRemove").append('<tr><td><input type="file" name="addMoreInputFields[' + i +
-            '][photos]" placeholder="Enter subject" class="form-control" /></td><td><textarea name="addMoreInputFields['+i+'][desc]" placeholder="Isi deskripsi photo" class="form-control"></textarea></td><td><button type="button" class="btn btn-outline-danger remove-input-field">Delete</button></td></tr>'
+            '][photos]" placeholder="Enter subject" class="form-control" /></td><td><button type="button" class="btn btn-outline-danger remove-input-field">Delete</button></td></tr>'
             );
     });
     $(document).on('click', '.remove-input-field', function () {

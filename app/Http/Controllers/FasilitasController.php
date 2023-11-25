@@ -40,7 +40,6 @@ class FasilitasController extends Controller
         $request->validate([
             'category' => 'required|string',
             'addMoreInputFields.*.photos' => 'required|mimes:jpg,png,jpeg,gif',
-            'addMoreInputFields.*.desc' => 'required'
         ]);
 
         $category = $request->input('category');
@@ -56,8 +55,7 @@ class FasilitasController extends Controller
         
             // Create a new object with the photo path and description
             $dataObj = [
-                'photoPath' => $photoPath,
-                'description' => $value['desc']
+                'photoPath' => $photoPath
             ];
         
             // Add data object to data array

@@ -418,7 +418,7 @@ if (
         <div class="title">
           <i class="fas fa-circle"></i>
           <h3 class="event-title">Nama Acara: ${event.title}</h3>
-          <h3 class="event-title">Nama Penyewa: ${event.namePenyewa}</h3>
+          <h3 class="event-title">Nama Penyewa: ${event.namaPenyewa}</h3>
           <h3 class="event-title">Nama Instansi: ${event.instansi}</h3>
           <h3 class="event-title">Jadwal Acara: ${event.jadwal}</h3>
         </div>

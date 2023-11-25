@@ -56,11 +56,8 @@
            <div class="row mb-4">
                 @foreach ($item->file_path as $key =>  $file )
                 <div class="col-md-4">
-                        <div class="card" style="width: 18rem;">
+                        <div class="card" style="width: 18rem; height: 18rem">
                                 <img src="{{$file['photoPath']}}" class="card-img-top" alt="...">
-                                <div class="card-body">
-                                        <p class="card-text">{{$file['description']}}</p>
-                                </div>
                         </div>
                 </div>
                 @endforeach
