@@ -61,6 +61,16 @@
                     <span>Pelayanan dan Aturan</span></a>
             </li>
 
+            <hr class="sidebar-divider">
+
+            <li class="nav-item">
+                <a class="nav-link" href="{{ route('peminjaman-admin.index') }}">
+                    <i class="fas fa-calendar-week"></i>
+                    <span>Peminjaman</span>
+                </a>
+            </li>
+
+
             <!-- Divider -->
             <hr class="sidebar-divider">
 
@@ -71,12 +81,10 @@
                 </a>
             </li>
 
-            <hr class="sidebar-divider">
-
             <li class="nav-item">
-                <a class="nav-link" href="{{ route('peminjaman-admin.index') }}">
+                <a class="nav-link" href="{{ route('fasilitas-admin.index') }}">
                     <i class="fas fa-calendar-week"></i>
-                    <span>Peminjaman</span>
+                    <span>Fasilitas</span>
                 </a>
             </li>
 
@@ -87,12 +95,7 @@
                 </a>
             </li>
 
-            <li class="nav-item">
-                <a class="nav-link" href="{{ route('fasilitas-admin.index') }}">
-                    <i class="fas fa-calendar-week"></i>
-                    <span>Fasilitas</span>
-                </a>
-            </li>
+
 
             <!-- Divider -->
             <hr class="sidebar-divider">

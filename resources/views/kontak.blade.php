@@ -75,7 +75,7 @@
         <ul class="navbar-nav">
           <img src="ic_logo.jpeg" width="50px" height="50px" />
             <li class="nav-item ">
-            <a class="nav-link active link-nav " aria-current="page" href="{{route('beranda')}}">HOME</a>
+            <a class="nav-link link-nav " aria-current="page" href="{{route('beranda')}}">HOME</a>
             </li>
             <li class="nav-item">
             <a class="nav-link link-nav " href="{{route('peraturan')}}">PELAYANAN DAN ATURAN</a>
@@ -93,7 +93,7 @@
             <a class="nav-link link-nav " href="{{route('fasilitas-user')}}">FASILITAS</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link link-nav " href="{{route('kontak')}}">KONTAK</a>
+              <a class="nav-link active link-nav " href="{{route('kontak')}}">KONTAK</a>
             </li>
               
     </div>
